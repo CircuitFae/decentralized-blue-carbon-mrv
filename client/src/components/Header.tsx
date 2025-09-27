@@ -1,5 +1,8 @@
 // file: client/src/components/Header.tsx
+"use client";
+
 import React from 'react';
+import { ConnectWallet } from './ConnectWallet'; // 1. Import
 
 const Header = () => {
   return (
@@ -13,12 +16,10 @@ const Header = () => {
         </p>
       </div>
       <div className="flex items-center space-x-4">
-        <button className="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition-colors">
+        <button className="bg-gray-700 hover:bg-gray-600 font-semibold py-2 px-4 rounded-md">
           Export Data
         </button>
-        <button className="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md transition-colors">
-          Refresh
-        </button>
+        <ConnectWallet /> {/* 2. Add the button here */}
       </div>
     </header>
   );
