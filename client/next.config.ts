@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const config: NextConfig = {
+  // Add this line to disable the dev toolbar
+  devTools: { toolbar: false },
 };
 
-export default nextConfig;
+export default config;
