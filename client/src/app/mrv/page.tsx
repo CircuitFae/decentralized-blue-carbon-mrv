@@ -1,7 +1,9 @@
 // file: client/src/app/mrv/page.tsx
 import { Sidebar } from "@/components/Sidebar";
-import DataUpload from "@/components/DataUpload"; // We reuse this component
-import SubmissionsTable from "@/components/SubmissionsTable"; // Our new component
+import DataUpload from "@/components/DataUpload";
+import SubmissionsTable from "@/components/SubmissionsTable";
+import 'leaflet/dist/leaflet.css';
+import ProjectLocations from "@/components/ProjectLocations";
 
 export default function MrvPage() {
   return (
@@ -15,14 +17,22 @@ export default function MrvPage() {
           </p>
         </header>
 
+        {/* This is your original, untouched section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-1">
-                <DataUpload />
-            </div>
-            <div className="lg:col-span-2">
-                <SubmissionsTable />
-            </div>
+          <div className="lg:col-span-1">
+              <DataUpload />
+          </div>
+          <div className="lg:col-span-2">
+              <SubmissionsTable />
+          </div>
         </div>
+
+        {/* NEW: A styled container for our map component */}
+        {/* This creates the "card" effect safely on this page */}
+        <div className="mt-8 bg-slate-800 p-6 rounded-xl">
+          <ProjectLocations />
+        </div>
+
       </main>
     </div>
   );
